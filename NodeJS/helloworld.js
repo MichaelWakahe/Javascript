@@ -5,6 +5,9 @@
  */
 const http = require('http');
 
+//var os = require("os");
+//const hostname = os.hostname();
+//const hostname = '192.168.1.249';
 const hostname = '127.0.0.1';
 const port = 3000;
 
