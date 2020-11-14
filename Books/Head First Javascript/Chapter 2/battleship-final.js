@@ -1,7 +1,7 @@
-let randomLoc = Math.floor(Math.random() * 5);
-let location1 = randomLoc;
-let location2 = location1 + 1;
-let location3 = location1 + 2;
+const randomLoc = Math.floor(Math.random() * 5);
+const location1 = randomLoc;
+const location2 = location1 + 1;
+const location3 = location1 + 2;
 let hits = 0;
 let guesses = 0;
 let isSunk = false;
