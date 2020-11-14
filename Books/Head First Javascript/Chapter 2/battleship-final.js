@@ -15,7 +15,9 @@ while (isSunk === false) {
 
 	} else {
 		guesses = guesses + 1;
-		if (guess == location1 || guess == location2 || guess == location3) {
+		if (guess == location1 || guess == location2 || guess == location3) {	// Entering the same location three
+																				// times results in sinking of the ship.
+																				// This can be improved upon.
 			alert("HIT!");
 			hits = hits + 1;
 			if (hits == 3) {
