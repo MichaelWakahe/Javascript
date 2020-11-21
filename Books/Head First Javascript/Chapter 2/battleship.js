@@ -1,4 +1,4 @@
-let location1 = 3, location2 = 4, location3 = 5;
+const location1 = 3, location2 = 4, location3 = 5;
 let hits = 0;
 let guesses = 0;
 let isSunk = false;
