@@ -1,48 +1,51 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Car properties</title>
-<script>
 
-var fiat = { 
-    make: "Fiat",
-    model: "500",
-    year: 1957, 
-    color: "Medium Blue",
-    passengers: 2,
-    convertible: false,
-    mileage: 88000,
-    started: false,
+    <head>
+        <meta charset="utf-8">
+        <title>Car properties</title>
+        <script>
 
-    start: function() {
-		this.started = true;
-	},
+            const fiat = {
+                make: "Fiat",
+                model: "500",
+                year: 1957,
+                color: "Medium Blue",
+                passengers: 2,
+                convertible: false,
+                mileage: 88000,
+                started: false,
 
-    stop: function() {
-		this.started = false;
-	},
+                start: function () {
+                    this.started = true;
+                },
 
-    drive: function() {
-		if (this.started) {
-			alert(this.make + " " +
-					this.model + " goes zoom zoom!");
-		} else {
-			alert("You need to start the engine first.");
-		}
-	}
-};
+                stop: function () {
+                    this.started = false;
+                },
 
-fiat.start();
-fiat.drive();
+                drive: function () {
+                    if (this.started) {
+                        alert(this.make + " " +
+                            this.model + " goes zoom zoom!");
+                    } else {
+                        alert("You need to start the engine first.");
+                    }
+                }
+            };
 
-for (prop in fiat) {
-	console.log(prop + ": " + fiat[prop]);
-}
+            fiat.start();
+            fiat.drive();
 
-</script>
-</head>
-<body>
-</body>
+            for (const prop in fiat) {
+                console.log(prop + ": " + fiat[prop]);
+            }
+
+        </script>
+    </head>
+
+    <body>
+    </body>
+
 </html>
 
