@@ -1,6 +1,6 @@
 /*
  * You can invoke this script with:
- *      node function.js
+ *      node function2.js
  */
 // JavaScript statements include conditionals and loops using the syntax
 // of C, C++, Java, and other languages.
@@ -23,7 +23,7 @@ function sum(array) {      // Compute the sum of the elements of an array
     return sum;            // Return the sum.
 }
 let primes = [2, 3, 5, 7]; // An array of 4 values, delimited with [ and ].
-console.log(sum(primes));                // => 28: sum of the first 5 primes 2+3+5+7+11
+console.log(sum(primes));  // => 28: sum of the first 5 primes 2+3+5+7+11
 
 
 function factorial(n) {    // A function to compute factorials
