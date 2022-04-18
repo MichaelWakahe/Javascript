@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+After cloning the project for the first time, start by running `npm install`.
+
+In case you get the error below, delete the `package-lock.json` and then run the command above.\
+`npm ERR! code E401`\
+`npm ERR! Unable to authenticate, your authentication token seems to be invalid.`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
