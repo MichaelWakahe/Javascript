@@ -1,0 +1,22 @@
+{
+    "name": "webpack-demo",
+    "version": "1.0.0",
+    "description": "A Webpack Typescript demo",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "keywords": [],
+    "author": "Michael Wakahe",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/lodash": "^4.14.182",
+        "lodash": "^4.17.20",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.6.4",
+        "webpack": "^5.38.1",
+        "webpack-cli": "^4.7.2"
+    }
+}
