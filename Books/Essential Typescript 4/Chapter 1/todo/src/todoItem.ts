@@ -3,6 +3,7 @@ export class TodoItem {
     public task: string;
     public complete: boolean = false;
 
+    // The `public` keyword is not optional for the constructor
     public constructor(id: number, task: string, complete: boolean = false) {
         this.id = id;
         this.task = task;
