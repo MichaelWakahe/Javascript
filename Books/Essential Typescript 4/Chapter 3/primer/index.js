@@ -154,5 +154,74 @@ console.log(`Total with gloves: ${totalPrice} ${typeof totalPrice}`);
 
 // Guarding Against Undefined Objects and Properties
 let propertyCheck = hat.price ?? 0;
-let objectAndPropertyCheck = (hat ?? {}).price ?? 0;
+let objectAndPropertyCheck = (hat ?? {}).price ?? 0;    // can be optionally written as: hat?.price ?? 0;
 console.log(`Checks: ${propertyCheck}, ${objectAndPropertyCheck}`);
+
+
+console.log("\nUsing the Spread and Rest Operators on Objects");
+let otherHat = { ...hat };
+console.log(`Spread: ${otherHat.name}, ${otherHat.price}`);
+
+let additionalProperties = { ...hat, discounted: true };
+console.log(`Additional: ${JSON.stringify(additionalProperties)}`);
+let replacedProperties = { ...hat, price: 10 };
+console.log(`Replaced: ${JSON.stringify(replacedProperties)}`);
+let { price, ...someProperties } = hat;
+console.log(`Selected: ${JSON.stringify(someProperties)}; price is ${price}`);
+
+
+console.log("\nDefining Getters and Setters");
+hat = {
+    name: "Hat",
+    _price: 100,    // JavaScript doesn’t have any built-in support for private properties
+                    // A widely used convention is to prefix a property name with an underscore to hint at privacy
+    priceIncTax: 100 * 1.2,
+    set price(newPrice) {
+        this._price = newPrice;
+        this.priceIncTax = this._price * 1.2;
+        console.log("'hat' has set the price");
+    },
+    get price() {
+        return this._price;
+    }
+};
+
+boots = {
+    name: "Boots",
+    price: "100",
+    get priceIncTax() {
+        return Number(this.price) * 1.2;
+    }
+}
+
+console.log(`Hat: ${hat.price}, ${hat.priceIncTax}`);
+hat.price = 120;
+console.log(`Hat: ${hat.price}, ${hat.priceIncTax}`);
+console.log(`Boots: ${boots.price}, ${boots.priceIncTax}`);
+boots.price = "120";
+console.log(`Boots: ${boots.price}, ${boots.priceIncTax}`);
+
+
+console.log("\nDefining Methods");
+hat = {
+    name: "Hat",
+    _price: 100,
+    priceIncTax: 100 * 1.2,
+    set price(newPrice) {
+        this._price = newPrice;
+        this.priceIncTax = this._price * 1.2;
+    },
+    get price() {
+        return this._price;
+    },
+    // writeDetails: function () {
+    //     console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
+    // }
+    writeDetails: () => {
+        console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
+    }
+};
+
+hat.writeDetails();
+hat.price = 120;
+hat.writeDetails();
