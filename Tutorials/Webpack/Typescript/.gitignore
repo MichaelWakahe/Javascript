@@ -1,6 +1,6 @@
 node_modules
 
-main.js
+bundle.js
 
  # Ignoring the transitive dependencies spec as this is a trivial example.
 package-lock.json
