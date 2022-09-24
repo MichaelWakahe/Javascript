@@ -6,14 +6,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-/*class Square extends React.Component {   
+/*class Square extends React.Component {
     render() {
         return (
             <button
                 className="square"
                 onClick={() => this.props.onClick()}
                 //onClick={() => { this.state.value = 'X' }}
-                //The above results in the following compiler warning: 
+                //The above results in the following compiler warning:
                 //Do not mutate state directly.Use setState()  react / no - direct - mutation - state
             >
                 {this.props.value}
@@ -42,7 +42,7 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        
+
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
@@ -57,8 +57,8 @@ class Board extends React.Component {
     renderSquare(i) {
         return (
             <Square
-                value={this.state.squares[i]} 
-                onClick={() => this.handleClick(i)}    
+                value={this.state.squares[i]}
+                onClick={() => this.handleClick(i)}
             />
         );
     }
