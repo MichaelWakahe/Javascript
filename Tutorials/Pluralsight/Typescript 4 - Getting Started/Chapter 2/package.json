@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve"
   },
-  "author": "Brice Wilson",
+  "author": "Michael Wakahe",
   "license": "ISC",
   "devDependencies": {
     "ts-loader": "8.0.17",
