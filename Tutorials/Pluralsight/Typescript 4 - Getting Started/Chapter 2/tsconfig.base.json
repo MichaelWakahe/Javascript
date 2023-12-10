@@ -68,8 +68,5 @@
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true,        /* Disallow inconsistently-cased references to the same file. */
     // "watch": true                                /* This can only be specified on the command line nowadays"
-  },
-  "files": [
-    "app/app.ts"
-  ]
+  }  
 }

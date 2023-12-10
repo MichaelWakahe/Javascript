@@ -1,4 +1,4 @@
-# README
+# Chapter 2
 Ensure that you have NodeJS available in your path.
 
 Install the typescript 
