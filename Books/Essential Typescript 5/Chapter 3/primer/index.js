@@ -1,8 +1,9 @@
 /**
+ * Install the npm package with the command: npm install
+ *
  * Run the following command to execute the contents of the JavaScript file and monitor it for changes:
  *      npx nodemon index.js
  */
-
 
 let hatPrice = 100;
 console.log(`Hat price: ${hatPrice}`);
@@ -11,9 +12,9 @@ let bootsPrice = "100";
 console.log(`Boots price: ${bootsPrice}`);
 
 if (hatPrice == bootsPrice) {   // If you use '===' instead of '==' then type coercion will be stopped
-    console.log("Prices are the same");
+    console.log("Prices are the same\n");
 } else {
-    console.log("Prices are different");
+    console.log("Prices are different\n");
 }
 
 let totalPrice = hatPrice + bootsPrice;
@@ -21,21 +22,21 @@ let totalPrice = hatPrice + bootsPrice;
 console.log(`Total Price: ${totalPrice}\n`);
 
 let myVariable = "Adam";
-console.log(`Type: ${typeof myVariable}`);
+console.log(`Typeof myVariable: ${typeof myVariable}`);
 
 myVariable = 100;
-console.log(`Type: ${typeof myVariable}\n`);
+console.log(`2nd Typeof myVariable: ${typeof myVariable}\n`);
 
 
 let firstCity;
 let secondCity = firstCity || "London";
-console.log(`City: ${secondCity}\n`);
+console.log(`secondCity: ${secondCity}\n`);
 
 
 let taxRate; // no tax rate has been defined
-console.log(`Tax rate: ${taxRate || 10}%`);
+console.log(`Tax rate when taxRate undefined: ${taxRate || 10}%`);
 taxRate = 0; // zero-rated for tax
-console.log(`Tax rate: ${taxRate || 10}%`);
+console.log(`Tax rate for taxRate equal to 0: ${taxRate || 10}%`);
 // In addition to null and undefined, the logical OR operator will also coerce the number value 0 (zero), the empty
 // string value(""), and the special NaN number value to false.
 
@@ -51,11 +52,12 @@ function sumPrices(first, second, third) {
 totalPrice = sumPrices(hatPrice, bootsPrice);
 // JavaScript doesn’t enforce a match between the number of parameters defined by a function and the number of arguments
 // used to invoke it. Any parameter for which a value is not provided will be undefined.
-console.log(`New Total Price: ${totalPrice}`);
+
+console.log(`Total Price: ${totalPrice}`);
 totalPrice = sumPrices(100, 200, 300);
 console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
 totalPrice = sumPrices(100, 200);
-console.log(`Total: ${totalPrice} ${typeof totalPrice}\n`);
+console.log(`2nd total: ${totalPrice} ${typeof totalPrice}\n`);
 
 
 // Using a default parameter value
@@ -90,7 +92,7 @@ console.log(`Total: ${totalPrice} ${typeof totalPrice}\n`);
 // To ensure the function produces a useful sum of its parameter values however they are received, they can be
 // converted to numbers and filtered to remove any that are NaN as follows:
 function sumPrices4(...numbers) {
-    return numbers.reduce(function (total, val) {   
+    return numbers.reduce(function (total, val) {
         return total + (Number.isNaN(Number(val)) ? 0 : Number(val));
     }, 0);
 }
@@ -175,7 +177,7 @@ console.log(`Spread: ${otherHat.name}, ${otherHat.price}`);
 
 let additionalProperties = { ...hat, discounted: true };
 console.log(`Additional: ${JSON.stringify(additionalProperties)}`);
-let replacedProperties = { ...hat, price: 10 }; // If a property name is used twice in the object literal syntax, then 
+let replacedProperties = { ...hat, price: 10 }; // If a property name is used twice in the object literal syntax, then
                                                 // the second value is the one that will be used.
 console.log(`Replaced: ${JSON.stringify(replacedProperties)}`);
 let { price, ...someProperties } = hat;
@@ -188,11 +190,13 @@ hat = {
     _price: 100,    // JavaScript doesn’t have any built-in support for private properties
                     // A widely used convention is to prefix a property name with an underscore to hint at privacy
     priceIncTax: 100 * 1.2,
+
     set price(newPrice) {
         this._price = newPrice;
         this.priceIncTax = this._price * 1.2;
         console.log("'hat' has set the price");
     },
+
     get price() {
         return this._price;
     }
@@ -201,6 +205,7 @@ hat = {
 boots = {
     name: "Boots",
     price: "100",
+
     get priceIncTax() {
         return Number(this.price) * 1.2;
     }
@@ -219,16 +224,20 @@ hat = {
     name: "Hat",
     _price: 100,
     priceIncTax: 100 * 1.2,
+
     set price(newPrice) {
         this._price = newPrice;
         this.priceIncTax = this._price * 1.2;
     },
+
     get price() {
         return this._price;
     },
+
     // writeDetails: function () {
     //     console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
     // }
+
     writeDetails() { // Equivalent to the method above
         console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
     }
@@ -244,15 +253,19 @@ hat = {
     name: "Hat",
     _price: 100,
     priceIncTax: 100 * 1.2,
+
     set price(newPrice) {
         this._price = newPrice;
         this.priceIncTax = this._price * 1.2;
     },
+
     get price() {
         return this._price;
     },
+
     writeDetails: () =>
         console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`)
+    // The "this" keyword doesn't work with arrow functions
 };
 
 hat.writeDetails();
@@ -294,6 +307,7 @@ myObject = {
         return (message) => console.log(`${this.greeting}, ${message}`);
     }
 }
+
 greeting = "Hello";
 let writer = myObject.getWriter();
 writer("It is raining today");
@@ -308,13 +322,16 @@ hat = {
     name: "Hat",
     _price: 100,
     priceIncTax: 100 * 1.2,
+
     set price(newPrice) {
         this._price = newPrice;
         this.priceIncTax = this._price * 1.2;
     },
+
     get price() {
         return this._price;
     },
+
     writeDetails() {
         console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
     }
