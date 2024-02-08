@@ -1,43 +1,14 @@
-import { TodoItem } from "./todoItem";
-
-/*export class TodoCollection {
-    private nextId: number = 1;
-
-    constructor(public userName: string, public todoItems: TodoItem[] = []) {
-        // no statements required
-    }
-
-    addTodo(task: string): number {
-        while (this.getTodoById(this.nextId)) {
-            this.nextId++;
-        }
-        this.todoItems.push(new TodoItem(this.nextId, task));
-        return this.nextId;
-    }
-
-    getTodoById(id: number): TodoItem {
-        return this.todoItems.find(item => item.id === id);
-    }
-
-    markComplete(id: number, complete: boolean) {
-        const todoItem = this.getTodoById(id);
-        if (todoItem) {
-            todoItem.complete = complete;
-        }
-    }
-}*/
+import { TodoItem } from "./todoItem.js";
 
 type ItemCounts = {
     total: number,
     incomplete: number
 }
 
-
 export class TodoCollection {
-
     private nextId: number = 1;
     protected itemMap = new Map<number, TodoItem>();
-
+    
     constructor(public userName: string, todoItems: TodoItem[] = []) {
         todoItems.forEach(item => this.itemMap.set(item.id, item));
     }
@@ -45,12 +16,12 @@ export class TodoCollection {
     addTodo(task: string): number {
         while (this.getTodoById(this.nextId)) {
             this.nextId++;
-        }
+        }        
         this.itemMap.set(this.nextId, new TodoItem(this.nextId, task));
         return this.nextId;
     }
 
-    getTodoById(id: number): TodoItem {
+    getTodoById(id: number) : TodoItem {
         return this.itemMap.get(id);
     }
 
@@ -65,7 +36,7 @@ export class TodoCollection {
             todoItem.complete = complete;
         }
     }
-
+    
     removeComplete() {
         this.itemMap.forEach(item => {
             if (item.complete) {
@@ -80,5 +51,4 @@ export class TodoCollection {
             incomplete: this.getTodoItems(false).length
         };
     }
-
 }
