@@ -2,7 +2,7 @@
  * Install the npm package with the command: npm install
  *
  * Run the following command to execute the contents of the JavaScript file and monitor it for changes:
- *      npx nodemon index.js
+ *      npx nodemon examples.js
  */
 
 // Constructors in the pre-ES6 Javascript
