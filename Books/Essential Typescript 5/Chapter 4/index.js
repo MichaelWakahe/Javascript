@@ -350,8 +350,7 @@ console.log("\n=== Storing data by key using a map ==");
 
 
 // Storing data by index
-// JavaScript provides Set, which stores data by index but has performance optimizations and—most usefully—stores only
-// unique values
+// JavaScript provides Set which stores only unique values
 class Product3 {
     constructor(name, price) {
         this.id = Symbol();
