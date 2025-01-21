@@ -12,7 +12,6 @@ In case you get the error below, delete the `package-lock.json` and then run the
 `npm ERR! code E401`\
 `npm ERR! Unable to authenticate, your authentication token seems to be invalid.`
 
-
 ## Available Scripts
 
 In the project directory, you can run:
