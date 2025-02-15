@@ -2,6 +2,10 @@
 
 These are examples utilizing [Playwright](https://playwright.dev/).
 
+## Getting Started
+
+Install the VS Code Playwright extension by Microsoft.
+
 ## Useful commands
 
 npx playwright test
@@ -21,4 +25,4 @@ npx playwright show-report
 
 npx playwright --version
 
-npx playwright codegen <http://your.website>
+Generate tests for a website: npx playwright codegen <http://your.website>
