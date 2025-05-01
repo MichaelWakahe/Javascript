@@ -11,5 +11,7 @@ The course was created using:
 
 ## Notes
 
-No configuration is required to get started.
-Tests run in parallel.
+- No configuration is required to get started with Jest.
+- Tests run in parallel.
+- By default Jest tests time out after 5 seconds.
+- Matchers are used to perform validation.
