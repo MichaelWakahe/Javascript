@@ -1,6 +1,6 @@
-const exception = require("../../error-handling/exceptions")
-const purchaseHistory = require("./purchaseHistory/purchaseHistory")
-const users = require("../users")
+import { InvalidUsernameError } from "../../error-handling/exceptions";
+import { getPurchaseHistory } from "./purchaseHistory/purchaseHistory";
+import { userExists as _userExists, createUserId } from "../users";
 
 class Purchase {
     constructor(eventName, tickets, cost) {
@@ -22,13 +22,13 @@ async function isValidUserName(userName) {
 
 async function createAccount(username) {
     if (!isValidUserName(username)) {
-        throw exception.InvalidUsernameError("Please enter a valid username")
+        throw InvalidUsernameError("Please enter a valid username")
     }
-    const userExists = await users.userExists(username);
+    const userExists = await _userExists(username);
     return new Promise((resolve, reject) => {
         if (!userExists) {
             resolve({data: {
-                "userId": users.createUserId(),
+                "userId": createUserId(),
                 "username": username,
             }}) 
         } else {
@@ -39,7 +39,7 @@ async function createAccount(username) {
 }
 
 function getPastPurchases(userId) {
-    const purchases = purchaseHistory.getPurchaseHistory(userId);
+    const purchases = getPurchaseHistory(userId);
         if (purchases.readyState === 4) {
             return purchases.response.events;
         }
@@ -48,7 +48,7 @@ function getPastPurchases(userId) {
         }
 }
 
-module.exports = {
+export default {
     Purchase,
     createAccount,
     isValidUserName,

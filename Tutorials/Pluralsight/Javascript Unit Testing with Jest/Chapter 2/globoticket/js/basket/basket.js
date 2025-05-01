@@ -1,4 +1,4 @@
-const { BasketItem } = require("./basketitem");
+import { BasketItem } from "./basketitem";
 
 function calculateTotal(basketItems, discount=null) {
     let total = 0;
@@ -64,7 +64,7 @@ function serializeBasketItemsToJson(basketItems) {
     return items;
 }
 
-module.exports = {
+export default {
     calculateTotal,
     showAdverts,
     searchBasket,

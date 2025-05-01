@@ -1,4 +1,4 @@
-const { Purchase } = require("../account")
+const { Purchase } = require("../account").default
 
 function getPurchaseHistory(userId) {
     const url = new URL("/account/orders/history ", BASE_URL);

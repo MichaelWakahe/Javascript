@@ -24,10 +24,10 @@ function __getPurchaseHistory() {
                 ],
         }
     }
+
     return response;
 }
 
 purchaseHistory.getPurchaseHistory = __getPurchaseHistory;
 
-
-module.exports = purchaseHistory;
+export default purchaseHistory;
